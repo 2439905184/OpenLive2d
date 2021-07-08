@@ -1,0 +1,5 @@
+#运行 先输入chcp 65001 换编码
+
+Program("main.c")
+#Include("")
+#Program("openLiveEditor.c")

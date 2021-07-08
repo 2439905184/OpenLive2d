@@ -1,0 +1,2 @@
+使用scons构建 可以使用mingw或者msvs编译
+使用scons需要pip install scons
