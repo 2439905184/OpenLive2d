@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>OpenLive2d开源 live2d实现</title>
+    <meta charset="utf-8">
+    <script src="pixi.min.js"></script>
+</head>
+
+<body>
+    <button>编辑轮廓网格</button>
+    <button>重建轮廓网格</button>
+    <button>编辑网格</button>
+    <button>添加骨骼</button>
+    <button>删除骨骼</button>
+    <button>添加图层</button>
+    <button>删除图层</button>
+    <button onclick="add_test_img()">添加图片</button>
+    <br>
+    <script>
+        //init pixi
+        // var canvas = document.getElementById("canvas").getContext("2d")
+        let type = "WebGL"
+        if (!PIXI.utils.isWebGLSupported()) {
+            type = "canvas"
+        }
+
+        PIXI.utils.sayHello(type)
+        let app = new PIXI.Application({
+            width: 1024,
+            height: 800
+        });
+        //结构体 网格顶点 每个顶点x y uv 纹理坐标
+        function mesh_point() {
+            this.x = 0
+            this.y = 0
+            this.u = 0
+            this.v = 0
+
+        }
+        //添加按钮
+
+        //Add the canvas that Pixi automatically created for you to the HTML document
+        document.body.appendChild(app.view);
+        //编辑网格按钮
+        function edit_edge_mesh() {}
+
+        function finish_edit_mesh() {}
+
+        function rebuild_mesh() {}
+
+        function edit_mesh() {}
+
+        function edit_bone() {}
+
+        function add_bone() {}
+
+        function remove_bone() {}
+
+        function remove_bone() {}
+
+        function remove_mesh_point() {}
+
+        function add_test_img() {
+            PIXI.loader
+                .add("rena.png")
+                .load(setup);
+
+            function setup() {
+                let sprite = new PIXI.Sprite(
+                    PIXI.loader.resources["rena.png"].texture);
+                app.stage.addChild(sprite)
+            }
+
+        }
+    </script>
+
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>
