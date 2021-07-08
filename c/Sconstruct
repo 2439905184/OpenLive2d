@@ -1,5 +1,22 @@
-#运行 先输入chcp 65001 换编码
-
-Program("main.c")
+#运行 先输入chcp 65001 换编码 scons 命令build
+#env=Environment(LIBS="freeglut")
+import os
+env=Environment(tools=['mingw'],ENV=os.environ)
+env.Program("main.c",LIBS=['freeglut'],LIBPATH='.')
 #Include("")
 #Program("openLiveEditor.c")
+"""
+csdn 大法
+#SConstruct
+import platform
+import os
+
+if platform.system() == 'Windows':
+    env = Environment(tools = ['mingw'], ENV = os.environ)
+    env.PrependENVPath('PATH', 'C:\\Dev-Cpp\\bin')
+    env.PrependENVPath('LIB', 'C:\\Dev-Cpp\\lib')
+else:
+    env = Environment(ENV = os.environ)
+
+env.Program(['main.cpp'], LIBS = libs, LIBPATH=libpath, CCFLAGS=cflags)
+"""
